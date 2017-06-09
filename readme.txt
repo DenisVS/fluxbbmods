@@ -1,4 +1,34 @@
-#$Id$
+##$Id$
+##
+##        Mod title:  Ajax Quick Merge Post
+##
+##      Mod version:  1.0
+##  Works on FluxBB:  1.5.10
+##     Release date:  2017-06-09
+##           Author:  DenisVS (deniswebcomm@gmail.com)
+##           Author:  Daris (daris91@gmail.com)
+##
+##      Description:  Allows quickly post a reply (using ajax)
+##
+##
+##   Affected files:  admin_options.php
+##                    footer.php
+##                    header.php
+##                    include/functions.php
+##                    lang/English/common.php
+##                    lang/English/post.php
+##                    post.php
+##                    viewtopic.php
+##
+##       Affects DB:  Yes
+##
+##       DISCLAIMER:  Please note that "mods" are not officially supported by
+##                    FluxBB. Installation of this modification is done at 
+##                    your own risk. Backup your forum database and any and
+##                    all applicable files before proceeding.
+##
+##
+
 #
 #---------[ . OPEN ]-------------------------------------
 #
@@ -44,7 +74,7 @@ admin_options.php
 footer.php
 
 #
-#---------[ . FIND  (line  ~ ) ]-------------------------
+#---------[ . FIND  (line  ~ 10) ]-------------------------
 #
 
 if (!defined('PUN'))
@@ -68,7 +98,7 @@ if (isset($_GET['ajax']))
 header.php
 
 #
-#---------[ . FIND  (line  ~ ) ]-------------------------
+#---------[ . FIND  (line  ~ 10) ]-------------------------
 #
 
 if (!defined('PUN'))
@@ -82,7 +112,7 @@ if (isset($_GET['ajax']))
 	return;
 
 #
-#---------[ . FIND  (line  ~ ) ]-------------------------
+#---------[ . FIND  (line  ~ 160) ]-------------------------
 #
 
 if (!empty($page_head))
@@ -142,7 +172,7 @@ function message($message, $no_back_link = false, $http_status = null)
 lang/English/common.php
 
 #
-#---------[ . FIND  (line  ~ 1) ]-------------------------
+#---------[ . FIND  (line  1) ]-------------------------
 #
 
 <?php
@@ -411,7 +441,7 @@ if (isset($_GET['pcount'])) {
 <div id="aqmp"></div>
 
 #
-#---------[ . FIND  (line  ~ ) ]-------------------------
+#---------[ . FIND  (line  ~ 474) ]-------------------------
 #
 
 					</div>

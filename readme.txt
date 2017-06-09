@@ -31,43 +31,43 @@
 ##
 
 #
-#---------[ . UPLOAD ]-------------------------------------
+#---------[ 1. UPLOAD ]-------------------------------------
 #
 
 files/* to /
 
 #
-#---------[ . RUN ]----------------------------------------------------------
+#---------[ 2. RUN ]----------------------------------------------------------
 #
 
 install_mod.php
 
 #
-#---------[ . DELETE ]-------------------------------------------------------
+#---------[ 3. DELETE ]-------------------------------------------------------
 #
 
 install_mod.php
 
 #
-#---------[ . OPEN ]-------------------------------------
+#---------[ 4. OPEN ]-------------------------------------
 #
 
 admin_options.php
 
 #
-#---------[ . FIND  (line  ~ 39) ]-------------------------
+#---------[ 5. FIND  (line  ~ 39) ]-------------------------
 #
 
 		'redirect_delay'		=> (intval($_POST['form']['redirect_delay']) >= 0) ? intval($_POST['form']['redirect_delay']) : 0,
 
 #
-#---------[ . ADD AFTER ]--------------------------------
+#---------[ 6. AFTER, ADD ]--------------------------------
 #
 
 		'merge_timeout'			=> (intval($_POST['form']['merge_timeout']) >= 0) ? intval($_POST['form']['merge_timeout']) : 0,
 
 #
-#---------[ . FIND  (line  ~ 409) ]-------------------------
+#---------[ 7. FIND  (line  ~ 409) ]-------------------------
 #
 
                                                                                										<span><?php echo $lang_admin_options['Redirect time help'] ?></span>
@@ -75,7 +75,7 @@ admin_options.php
 								</tr>
 
 #
-#---------[ . ADD AFTER ]--------------------------------
+#---------[ 8. AFTER, ADD ]--------------------------------
 #
 
 								<tr>
@@ -87,20 +87,20 @@ admin_options.php
 								</tr>
 
 #
-#---------[ . OPEN ]-------------------------------------
+#---------[ 9. OPEN ]-------------------------------------
 #
 
 footer.php
 
 #
-#---------[ . FIND  (line  ~ 10) ]-------------------------
+#---------[ 10. FIND  (line  ~ 10) ]-------------------------
 #
 
 if (!defined('PUN'))
 	exit;
 
 #
-#---------[ . ADD AFTER ]--------------------------------
+#---------[ 11. AFTER, ADD ]--------------------------------
 #
 
 if (isset($_GET['ajax']))
@@ -111,34 +111,34 @@ if (isset($_GET['ajax']))
 }
 
 #
-#---------[ . OPEN ]-------------------------------------
+#---------[ 12. OPEN ]-------------------------------------
 #
 
 header.php
 
 #
-#---------[ . FIND  (line  ~ 10) ]-------------------------
+#---------[ 13. FIND  (line  ~ 10) ]-------------------------
 #
 
 if (!defined('PUN'))
 	exit;
 
 #
-#---------[ . ADD AFTER ]--------------------------------
+#---------[ 14. AFTER, ADD ]--------------------------------
 #
 
 if (isset($_GET['ajax']))
 	return;
 
 #
-#---------[ . FIND  (line  ~ 160) ]-------------------------
+#---------[ 15. FIND  (line  ~ 160) ]-------------------------
 #
 
 if (!empty($page_head))
 	echo implode("\n", $page_head)."\n";
 
 #
-#---------[ . ADD BEFORE ]-------------------------------
+#---------[ 16. BEFORE, ADD ]-------------------------------
 #
 
 if (basename($_SERVER['PHP_SELF']) == 'viewtopic.php')
@@ -148,20 +148,20 @@ if (basename($_SERVER['PHP_SELF']) == 'viewtopic.php')
 }
 
 #
-#---------[ . OPEN ]-------------------------------------
+#---------[ 17. OPEN ]-------------------------------------
 #
 
 include/functions.php
 
 #
-#---------[ . FIND  (line  ~ 945) ]-------------------------
+#---------[ 18. FIND  (line  ~ 945) ]-------------------------
 #
 
 function message($message, $no_back_link = false, $http_status = null)
 {
 
 #
-#---------[ . ADD AFTER ]--------------------------------
+#---------[ 19. AFTER, ADD ]--------------------------------
 #
 
 	if (isset($_GET['ajax']))
@@ -171,83 +171,83 @@ function message($message, $no_back_link = false, $http_status = null)
 	}
 
 #
-#---------[ . FIND  (line  ~ 1443) ]-------------------------
+#---------[ 20. FIND  (line  ~ 1443) ]-------------------------
 #
 
 	// Prefix with base_url (unless there's already a valid URI)
 	if (strpos($destination_url, 'http://') !== 0 && strpos($destination_url, 'https://') !== 0 && strpos($destination_url, '/') !== 0)
 
 #
-#---------[ . ADD BEFORE ]-------------------------------
+#---------[ 21. BEFORE, ADD ]-------------------------------
 #
 
 	if (isset($_GET['ajax']))
 		return;
 
 #
-#---------[ . OPEN ]-------------------------------------
+#---------[ 22. OPEN ]-------------------------------------
 #
 
 lang/[language]/common.php
 
 #
-#---------[ . FIND  (line  1) ]-------------------------
+#---------[ 23. FIND  (line  1) ]-------------------------
 #
 
 <?php
 
 #
-#---------[ . ADD AFTER ]--------------------------------
+#---------[ 24. AFTER, ADD ]--------------------------------
 #
 
 setlocale(LC_TIME, $locale);
 
 #
-#---------[ . OPEN ]-------------------------------------
+#---------[ 25. OPEN ]-------------------------------------
 #
 
 lang/[language]/post.php
 
 #
-#---------[ . FIND  (line  ~ 32) ]-------------------------
+#---------[ 26. FIND  (line  ~ 32) ]-------------------------
 #
 
 // Edit post
 
 #
-#---------[ . ADD AFTER ]--------------------------------
+#---------[ 27. AFTER, ADD ]--------------------------------
 #
 
 'Merge posts'		=>			'Merge with previous if it yours',
 'Added after'		=>			'Added after',
 
 #
-#---------[ . OPEN ]-------------------------------------
+#---------[ 28. OPEN ]-------------------------------------
 #
 
 post.php
 
 #
-#---------[ . FIND  (line  ~ 23) ]-------------------------
+#---------[ 29. FIND  (line  ~ 23) ]-------------------------
 #
 
 	$result = $db->query('SELECT f.id, f.forum_name, f.moderators, f.redirect_url, fp.post_replies, fp.post_topics, t.subject, t.closed, s.user_id AS is_subscribed FROM '.$db->prefix.'topics AS t INNER JOIN '.$db->prefix.'forums AS f ON f.id=t.forum_id LEFT JOIN '.$db->prefix.'forum_perms AS fp ON (fp.forum_id=f.id AND fp.group_id='.$pun_user['g_id'].') LEFT JOIN '.$db->prefix.'topic_subscriptions AS s ON (t.id=s.topic_id AND s.user_id='.$pun_user['id'].') WHERE (fp.read_forum IS NULL OR fp.read_forum=1) AND t.id='.$tid) or error('Unable to fetch forum info', __FILE__, __LINE__, $db->error());
 
 #
-#---------[ . REPLACE WITH ]-----------------------------
+#---------[ 30. REPLACE WITH ]-----------------------------
 #
 
 	$result = $db->query('SELECT f.id, f.forum_name, f.moderators, f.redirect_url, fp.post_replies, fp.post_topics, t.subject, t.closed, t.added, p.id AS post_id, p.poster_id, p.message, p.posted,  s.user_id AS is_subscribed FROM '.$db->prefix.'topics AS t INNER JOIN '.$db->prefix.'forums AS f ON f.id=t.forum_id  LEFT JOIN '.$db->prefix.'posts AS p ON (t.last_post_id=p.id AND p.poster_id='.$pun_user['id'].') LEFT JOIN '.$db->prefix.'forum_perms AS fp ON (fp.forum_id=f.id AND fp.group_id='.$pun_user['g_id'].') LEFT JOIN '.$db->prefix.'topic_subscriptions AS s ON (t.id=s.topic_id AND s.user_id='.$pun_user['id'].') WHERE (fp.read_forum IS NULL OR fp.read_forum=1) AND t.id='.$tid) or error('Unable to fetch forum info', __FILE__, __LINE__, $db->error());
 
 #
-#---------[ . FIND  (line  ~ 170) ]-------------------------
+#---------[ 31. FIND  (line  ~ 170) ]-------------------------
 #
 
 	{
 		require PUN_ROOT.'include/search_idx.php';
 
 #
-#---------[ . ADD AFTER ]--------------------------------
+#---------[ 32. AFTER, ADD ]--------------------------------
 #
 
 	   $merged=false;
@@ -264,7 +264,7 @@ post.php
 
 
 #
-#---------[ . FIND  (line  ~ 192) ]-------------------------
+#---------[ 33. FIND  (line  ~ 192) ]-------------------------
 #
 
 				// Insert the new post
@@ -272,7 +272,7 @@ post.php
 				$new_pid = $db->insert_id();
 
 #
-#---------[ . REPLACE WITH ]-----------------------------
+#---------[ 34. REPLACE WITH ]-----------------------------
 #
 
 				// Insert the new post
@@ -287,7 +287,7 @@ post.php
 
 
 #
-#---------[ . FIND  (line  ~ 212) ]-------------------------
+#---------[ 35. FIND  (line  ~ 212) ]-------------------------
 #
 
 			// Update topic
@@ -301,7 +301,7 @@ post.php
 			if ($pun_config['o_topic_subscriptions'] == '1')
 
 #
-#---------[ . REPLACE WITH ]-----------------------------
+#---------[ 36. REPLACE WITH ]-----------------------------
 #
 
 			// Update topic
@@ -318,7 +318,7 @@ post.php
 			if ($pun_config['o_topic_subscriptions'] == '1' && !$merged)
 
 #
-#---------[ . FIND  (line  ~ 441) ]-------------------------
+#---------[ 37. FIND  (line  ~ 441) ]-------------------------
 #
 
 		// If the posting user is logged in, increment his/her post count
@@ -327,7 +327,7 @@ post.php
 			$db->query('UPDATE '.$db->prefix.'users SET num_posts=num_posts+1, last_post='.$now.' WHERE id='.$pun_user['id']) or error('Unable to update user', __FILE__, __LINE__, $db->error());
 
 #
-#---------[ . REPLACE WITH ]-----------------------------
+#---------[ 38. REPLACE WITH ]-----------------------------
 #
 
 	   // If the posting user is logged in, increment his/her post count
@@ -340,7 +340,7 @@ post.php
 			}
 
 #
-#---------[ . FIND  (line  ~ 467) ]-------------------------
+#---------[ 39. FIND  (line  ~ 467) ]-------------------------
 #
 
 		redirect('viewtopic.php?pid='.$new_pid.'#p'.$new_pid, $lang_post['Post redirect']);
@@ -348,7 +348,7 @@ post.php
 }
 
 #
-#---------[ . REPLACE WITH ]-----------------------------
+#---------[ 40. REPLACE WITH ]-----------------------------
 #
 
 		if (isset($_GET['ajax']) && isset($_GET['ppid']))
@@ -369,7 +369,7 @@ if (isset($_GET['ajax']) && !empty($errors))
 }
 
 #
-#---------[ . FIND  (line  ~ 704) ]-------------------------
+#---------[ 41. FIND  (line  ~ 704) ]-------------------------
 #
 
 if (!$pun_user['is_guest'])
@@ -377,7 +377,7 @@ if (!$pun_user['is_guest'])
 	if ($pun_config['o_smilies'] == '1')
 
 #
-#---------[ . REPLACE WITH ]-----------------------------
+#---------[ 42. REPLACE WITH ]-----------------------------
 #
 
 if (!$pun_user['is_guest'])
@@ -386,25 +386,25 @@ if (!$pun_user['is_guest'])
 	if ($pun_config['o_smilies'] == '1')
 
 #
-#---------[ . OPEN ]-------------------------------------
+#---------[ 43. OPEN ]-------------------------------------
 #
 
 viewtopic.php
 
 #
-#---------[ . FIND  (line  ~ 10) ]-------------------------
+#---------[ 44. FIND  (line  ~ 10) ]-------------------------
 #
 
 require PUN_ROOT.'include/common.php';
 
 #
-#---------[ . ADD AFTER ]--------------------------------
+#---------[ 45. AFTER, ADD ]--------------------------------
 #
 
 require PUN_ROOT.'lang/'.$pun_user['language'].'/post.php';
 
 #
-#---------[ . FIND  (line  ~ 83) ]-------------------------
+#---------[ 46. FIND  (line  ~ 83) ]-------------------------
 #
 
 // Fetch some info about the topic
@@ -414,7 +414,7 @@ else
 	$result = $db->query('SELECT t.subject, t.closed, t.num_replies, t.sticky, t.first_post_id, f.id AS forum_id, f.forum_name, f.moderators, fp.post_replies, 0 AS is_subscribed FROM '.$db->prefix.'topics AS t INNER JOIN '.$db->prefix.'forums AS f ON f.id=t.forum_id LEFT JOIN '.$db->prefix.'forum_perms AS fp ON (fp.forum_id=f.id AND fp.group_id='.$pun_user['g_id'].') WHERE (fp.read_forum IS NULL OR fp.read_forum=1) AND t.id='.$id.' AND t.moved_to IS NULL') or error('Unable to fetch topic info', __FILE__, __LINE__, $db->error());
 
 #
-#---------[ . REPLACE WITH ]-----------------------------
+#---------[ 47. REPLACE WITH ]-----------------------------
 #
 
 // Fetch some info about the topic
@@ -424,7 +424,7 @@ else
 	$result = $db->query('SELECT t.subject, t.closed, t.num_replies, t.sticky, t.first_post_id, t.last_post_id, f.id AS forum_id, f.forum_name, f.moderators, fp.post_replies, 0 AS is_subscribed FROM '.$db->prefix.'topics AS t INNER JOIN '.$db->prefix.'forums AS f ON f.id=t.forum_id LEFT JOIN '.$db->prefix.'forum_perms AS fp ON (fp.forum_id=f.id AND fp.group_id='.$pun_user['g_id'].') WHERE (fp.read_forum IS NULL OR fp.read_forum=1) AND t.id='.$id.' AND t.moved_to IS NULL') or error('Unable to fetch topic info', __FILE__, __LINE__, $db->error());
 
 #
-#---------[ . FIND  (line  ~ 216) ]-------------------------
+#---------[ 48. FIND  (line  ~ 216) ]-------------------------
 #
 
 $post_count = 0; // Keep track of post numbers
@@ -433,7 +433,7 @@ $post_count = 0; // Keep track of post numbers
 $result = $db->query('SELECT id FROM '.$db->prefix.'posts WHERE topic_id='.$id.' ORDER BY id LIMIT '.$start_from.','.$pun_user['disp_posts']) or error('Unable to fetch post IDs', __FILE__, __LINE__, $db->error());
 
 #
-#---------[ . REPLACE WITH ]-----------------------------
+#---------[ 49. REPLACE WITH ]-----------------------------
 #
 
 // Retrieve a list of post IDs, LIMIT is (really) expensive so we only fetch the IDs here then later fetch the remaining data
@@ -446,7 +446,7 @@ if (isset($_GET['pcount'])) {
 }
 
 #
-#---------[ . FIND  (line  ~ 411) ]-------------------------
+#---------[ 50. FIND  (line  ~ 411) ]-------------------------
 #
 
 <div class="postlinksb">
@@ -454,13 +454,13 @@ if (isset($_GET['pcount'])) {
 		<div class="pagepost">
 
 #
-#---------[ . ADD BEFORE ]-------------------------------
+#---------[ 51. BEFORE, ADD ]-------------------------------
 #
 
 <div id="aqmp"></div>
 
 #
-#---------[ . FIND  (line  ~ 474) ]-------------------------
+#---------[ 52. FIND  (line  ~ 474) ]-------------------------
 #
 
 					</div>
@@ -470,7 +470,7 @@ if (isset($_GET['pcount'])) {
 			<p class="buttons"><input type="submit" name="submit" tabindex="<?php echo $cur_index++ ?>" value="<?php echo $lang_common['Submit'] ?>" accesskey="s" /> <input type="submit" name="preview" value="<?php echo $lang_topic['Preview'] ?>" tabindex="<?php echo $cur_index++ ?>" accesskey="p" /></p>
 
 #
-#---------[ . REPLACE WITH ]-----------------------------
+#---------[ 53. REPLACE WITH ]-----------------------------
 #
 
 <?php

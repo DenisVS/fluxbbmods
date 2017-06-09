@@ -8,8 +8,8 @@
 ##           Author:  DenisVS (deniswebcomm@gmail.com)
 ##         Based on:  Ajax Quick Post by Daris (daris91@gmail.com), Merge Post for PunBB by hcs (hcs@mail.ru)
 ##
-##      Description:  Allows quickly post a reply (using ajax) 
-##                    and merge your message with last message in a topic if it was yours
+##      Description:  Allows quickly post a reply (using ajax) and merge your
+##                    message with last message in a topic if it was yours
 ##
 ##
 ##   Affected files:  admin_options.php

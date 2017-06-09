@@ -4,7 +4,7 @@
 // Some info about your mod.
 $mod_title      = 'Ajax Quick Merge Post';
 $mod_version    = '1.0';
-$release_date   = '2017-06-07';
+$release_date   = '2017-06-09';
 $author         = 'DenisVS';
 $author_email   = 'deniswebcomm@gmail.com';
 

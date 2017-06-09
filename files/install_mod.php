@@ -1,8 +1,8 @@
 <?php
 /***********************************************************************/
-
+//$Id$
 // Some info about your mod.
-$mod_title      = 'Merged ajax quick posts';
+$mod_title      = 'Ajax Quick Merge Post';
 $mod_version    = '1.0';
 $release_date   = '2017-06-07';
 $author         = 'DenisVS';

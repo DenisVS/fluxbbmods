@@ -1,3 +1,4 @@
+//$Id$
 function aqmp_post(the_form)
 {
 	$('#aqmp-icon').show();

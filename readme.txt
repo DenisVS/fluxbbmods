@@ -495,3 +495,34 @@ if ($is_admmod) {
 				   <span id="aqmp-icon" style="background: url(img/loading.gif) no-repeat; padding: 1px 8px; margin-left: 5px; display: none;"></span>
 			</p>
 
+######################################################
+#
+#  Only if You use mod "Stick First Post" by Visman!
+#
+######################################################
+#
+#---------[  FIND  ]-------------------------
+#
+
+// StickFP
+$stick_fp_flag = ($cur_topic['stick_fp'] != 0 || (isset($cur_topic['poll_type']) && $cur_topic['poll_type'] > 0));
+$stick_fp_start_from = 0;
+if ($stick_fp_flag)
+	$post_ids[] = $cur_topic['first_post_id'];
+// StickFP
+
+
+#
+#---------[ REPLACE WITH ]-----------------------------
+#
+
+// StickFP
+$stick_fp_flag = ($cur_topic['stick_fp'] != 0 || (isset($cur_topic['poll_type']) && $cur_topic['poll_type'] > 0));
+if (isset($_GET['ajax']))  {unset($stick_fp_flag );}
+$stick_fp_start_from = 0;
+if ($stick_fp_flag)
+	$post_ids[] = $cur_topic['first_post_id'];
+// StickFP
+
+
+

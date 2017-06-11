@@ -2,7 +2,7 @@
 ##
 ##        Mod title:  Ajax Quick Merge Post
 ##
-##      Mod version:  1.0
+##      Mod version:  1.0.1
 ##  Works on FluxBB:  1.5.10
 ##     Release date:  2017-06-09
 ##           Author:  DenisVS (deniswebcomm@gmail.com)

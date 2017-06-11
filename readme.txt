@@ -4,7 +4,7 @@
 ##
 ##      Mod version:  1.0.1
 ##  Works on FluxBB:  1.5.10
-##     Release date:  2017-06-09
+##     Release date:  2017-06-11
 ##           Author:  DenisVS (deniswebcomm@gmail.com)
 ##         Based on:  Ajax Quick Post by Daris (daris91@gmail.com), Merge Post for PunBB by hcs (hcs@mail.ru)
 ##

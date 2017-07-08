@@ -279,6 +279,7 @@ post.php
 				if ($merged)   {
 					$message = $cur_posting['message'] . "\n\n" . $message;
 					$db->query('UPDATE '.$db->prefix.'posts SET message=\''.$db->escape($message).'\' WHERE  id='.$cur_posting['post_id']) or error('Unable to merge post', __FILE__, __LINE__, $db->error());
+					$db->query('UPDATE '.$db->prefix.'topics SET last_post='.$now.' WHERE id='.$tid) or error('Unable to update topic', __FILE__, __LINE__, $db->error());
 					$new_pid=$cur_posting['post_id'];
 				}  else {
 					$db->query('INSERT INTO '.$db->prefix.'posts (poster, poster_id, poster_ip, message, hide_smilies, posted, topic_id) VALUES(\''.$db->escape($username).'\', '.$pun_user['id'].', \''.$db->escape(get_remote_address()).'\', \''.$db->escape($message).'\', '.$hide_smilies.', '.$now.', '.$tid.')') or error('Unable to create post', __FILE__, __LINE__, $db->error());
